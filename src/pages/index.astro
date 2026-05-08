@@ -4,6 +4,8 @@ import Layout from "../layouts/Layout.astro";
 const title = "Neurofeedback Dynamique NeurOptimal® Nantes & Clisson | Cabinet NeurOasis";
 const description =
   "Cabinet NeurOasis à Nantes et Clisson — séances de neurofeedback dynamique NeurOptimal® pour stress, anxiété, troubles du sommeil, récupération et bien-être.";
+const pagesUrl = "https://thomasrehault-ux.github.io/site-neuroasis-neurofeedback";
+const basePath = import.meta.env.BASE_URL;
 
 const healthBusinessJsonLd = JSON.stringify({
   "@context": "https://schema.org",
@@ -11,7 +13,7 @@ const healthBusinessJsonLd = JSON.stringify({
   name: "Cabinet NeurOasis",
   description:
     "Cabinet spécialisé en neurofeedback dynamique NeurOptimal® à Nantes et Clisson. Accompagnement du stress, de l'anxiété, des troubles du sommeil, du TDAH et du burn-out.",
-  url: "https://www.neuroasis.fr",
+  url: pagesUrl,
   telephone: "+33123456789",
   email: "contact@neuroasis.fr",
   image: "https://www.neuroasis.fr/og-image.jpg",
@@ -89,11 +91,11 @@ const faqJsonLd = JSON.stringify({
     />
     <meta name="author" content="Cabinet NeurOasis" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.neuroasis.fr/" />
+    <link rel="canonical" href={pagesUrl} />
     <meta name="theme-color" content="#1a2e1e" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.neuroasis.fr/" />
+    <meta property="og:url" content={pagesUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="https://www.neuroasis.fr/og-image.jpg" />
@@ -120,7 +122,7 @@ const faqJsonLd = JSON.stringify({
   </Fragment>
 
   <nav id="navbar" role="navigation" aria-label="Navigation principale">
-    <a href="/" class="nav-logo" aria-label="NeurOasis – Accueil">Neur<span>Oasis</span></a>
+    <a href={basePath} class="nav-logo" aria-label="NeurOasis – Accueil">Neur<span>Oasis</span></a>
     <ul class="nav-links">
       <li><a href="#what">Le neurofeedback</a></li>
       <li><a href="#principles">Le fonctionnement</a></li>
