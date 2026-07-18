@@ -1,46 +1,59 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const title = "Neurofeedback Dynamique NeurOptimal® Nantes & Clisson | Cabinet NeurOasis";
+const title = "Neurofeedback dynamique NeurOptimal® à Nantes et Clisson | NeurOasis";
 const description =
-  "Cabinet NeurOasis à Nantes et Clisson — séances de neurofeedback dynamique NeurOptimal® pour stress, anxiété, troubles du sommeil, récupération et bien-être.";
+  "Séances de neurofeedback dynamique NeurOptimal® à Nantes et Clisson : un entraînement cérébral non invasif au service du bien-être et de l'adaptation face au stress.";
 const pagesUrl = "https://thomasrehault-ux.github.io/site-neuroasis-neurofeedback";
 const basePath = import.meta.env.BASE_URL;
+const currentYear = new Date().getFullYear();
 
 const healthBusinessJsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "HealthAndBeautyBusiness",
-  name: "Cabinet NeurOasis",
+  name: "NeurOasis",
   description:
-    "Cabinet spécialisé en neurofeedback dynamique NeurOptimal® à Nantes et Clisson. Accompagnement du stress, de l'anxiété, des troubles du sommeil, du TDAH et du burn-out.",
+    "Séances de neurofeedback dynamique NeurOptimal® à Nantes et Clisson, proposées comme un entraînement cérébral non invasif et une démarche de bien-être.",
   url: pagesUrl,
-  telephone: "+33123456789",
-  email: "contact@neuroasis.fr",
-  image: "https://www.neuroasis.fr/og-image.jpg",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "12 rue des Érables",
-    addressLocality: "Nantes",
-    postalCode: "44000",
-    addressCountry: "FR",
-  },
-  geo: { "@type": "GeoCoordinates", latitude: 47.2184, longitude: -1.5536 },
-  openingHoursSpecification: [
+  image: `${pagesUrl}/images/seance-neurofeedback.jpg`,
+  location: [
     {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "19:00",
+      "@type": "Place",
+      name: "NeurOasis Nantes",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "7 rue des Rochettes",
+        addressLocality: "Nantes",
+        postalCode: "44000",
+        addressCountry: "FR",
+      },
     },
     {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "09:00",
-      closes: "13:00",
+      "@type": "Place",
+      name: "NeurOasis Clisson",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "26 rue des Saules",
+        addressLocality: "Clisson",
+        postalCode: "44190",
+        addressCountry: "FR",
+      },
     },
   ],
-  priceRange: "€€",
-  sameAs: ["https://www.doctolib.fr/cabinet-neuroasis"],
+  employee: [
+    {
+      "@type": "Person",
+      name: "Aude Réhault",
+      jobTitle: "Psychologue clinicienne – Psychothérapeute",
+      url: "https://www.doctolib.fr/psychologue/nantes/aude-rehault",
+    },
+    {
+      "@type": "Person",
+      name: "Charles-Antoine Menanteau",
+      jobTitle: "Psychologue clinicien – Psychothérapeute",
+      url: "https://www.doctolib.fr/psychologue/nantes/charles-antoine-menanteau",
+    },
+  ],
 });
 
 const faqJsonLd = JSON.stringify({
@@ -52,7 +65,7 @@ const faqJsonLd = JSON.stringify({
       name: "Le neurofeedback dynamique est-il dangereux ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Le neurofeedback dynamique est présenté comme une méthode non invasive : les capteurs lisent l'activité électrique naturelle, mais n'envoient aucun courant au cerveau.",
+        text: "Le neurofeedback dynamique est présenté comme une méthode fonctionnelle et non invasive : ce sont des capteurs qui lisent l'activité électrique naturelle, mais ils n'envoient aucun courant au cerveau. En cas de doute personnel, n'hésitez pas à demander l'avis de votre médecin.",
       },
     },
     {
@@ -60,7 +73,7 @@ const faqJsonLd = JSON.stringify({
       name: "Combien de séances de neurofeedback faut-il ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Il n'existe pas de nombre universel. L'évolution se fait au fil du temps et varie selon les objectifs et les ressentis.",
+        text: "C'est très variable : certaines personnes souhaitent découvrir la méthode sur quelques séances, d'autres préfèrent s'inscrire dans un accompagnement plus progressif. L'idée la plus juste est de raisonner en termes d'évolution au fil du temps, variable selon les objectifs et les ressentis. Le premier rendez-vous avec le psychologue clinicien sert à établir une première base à partir des besoins initiaux.",
       },
     },
     {
@@ -68,7 +81,7 @@ const faqJsonLd = JSON.stringify({
       name: "Le neurofeedback est-il remboursé par la Sécurité sociale ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Non, les séances ne sont pas prises en charge par l'Assurance Maladie. Certaines mutuelles peuvent rembourser partiellement les approches de bien-être.",
+        text: "Les séances ne sont pas prises en charge par l'Assurance Maladie. Certaines complémentaires santé peuvent toutefois prévoir une participation selon leurs contrats : renseignez-vous directement auprès de votre organisme.",
       },
     },
     {
@@ -76,7 +89,15 @@ const faqJsonLd = JSON.stringify({
       name: "Est-ce une méthode médicale ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Non. D'après la documentation officielle du fabricant, NeurOptimal® est présenté comme un outil de brain training et de bien-être, pas comme un dispositif destiné à diagnostiquer, traiter ou guérir une maladie.",
+        text: "Non. NeurOptimal® est présenté comme un outil d'entraînement cérébral et de bien-être, pas comme un dispositif destiné à diagnostiquer, traiter ou guérir une maladie. Il peut s'inscrire en complément d'une démarche globale, sans remplacer un suivi médical.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Quelle différence avec la méditation ou la sophrologie ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Contrairement à ces pratiques, le neurofeedback ne repose pas sur une consigne mentale, une respiration spécifique ou un apprentissage conscient. La personne écoute simplement de la musique pendant que le système renvoie des informations auditives très brèves. Les approches peuvent être complémentaires.",
       },
     },
   ],
@@ -87,9 +108,9 @@ const faqJsonLd = JSON.stringify({
   <Fragment slot="head">
     <meta
       name="keywords"
-      content="neurofeedback, neurofeedback dynamique, NeurOptimal, neurofeedback Nantes, neurofeedback Clisson, stress, anxiété, sommeil, bien-être"
+      content="neurofeedback, neurofeedback dynamique, NeurOptimal®, neurofeedback Nantes, neurofeedback Clisson, entraînement cérébral, bien-être"
     />
-    <meta name="author" content="Cabinet NeurOasis" />
+    <meta name="author" content="NeurOasis" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={pagesUrl} />
     <meta name="theme-color" content="#1a2e1e" />
@@ -98,17 +119,17 @@ const faqJsonLd = JSON.stringify({
     <meta property="og:url" content={pagesUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://www.neuroasis.fr/og-image.jpg" />
+    <meta property="og:image" content={`${pagesUrl}/images/seance-neurofeedback.jpg`} />
     <meta property="og:locale" content="fr_FR" />
-    <meta property="og:site_name" content="Cabinet NeurOasis" />
+    <meta property="og:site_name" content="NeurOasis" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Neurofeedback Dynamique NeurOptimal® | Cabinet NeurOasis" />
+    <meta name="twitter:title" content="Neurofeedback dynamique NeurOptimal® | NeurOasis" />
     <meta
       name="twitter:description"
-      content="Stress, anxiété, sommeil : retrouvez un meilleur équilibre naturellement. Cabinet NeurOasis, Nantes et Clisson."
+      content="Retrouvez sérénité, bien-être et performance naturellement avec NeurOptimal® à Nantes et Clisson."
     />
-    <meta name="twitter:image" content="https://www.neuroasis.fr/og-image.jpg" />
+    <meta name="twitter:image" content={`${pagesUrl}/images/seance-neurofeedback.jpg`} />
 
     <script type="application/ld+json" set:html={healthBusinessJsonLd}></script>
     <script type="application/ld+json" set:html={faqJsonLd}></script>
@@ -122,7 +143,7 @@ const faqJsonLd = JSON.stringify({
   </Fragment>
 
   <nav id="navbar" role="navigation" aria-label="Navigation principale">
-    <a href={basePath} class="nav-logo" aria-label="NeurOasis – Accueil">Neur<span>Oasis</span></a>
+    <a href={`${basePath}/`} class="nav-logo" aria-label="NeurOasis – Accueil">Neur<span>Oasis</span></a>
     <ul class="nav-links">
       <li><a href="#what">Le neurofeedback</a></li>
       <li><a href="#principles">Le fonctionnement</a></li>
@@ -131,9 +152,7 @@ const faqJsonLd = JSON.stringify({
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
       <li>
-        <a href="https://www.doctolib.fr" target="_blank" rel="noopener noreferrer" class="nav-cta"
-          >Prendre RDV</a
-        >
+        <a href="#booking" class="nav-cta">Prendre RDV</a>
       </li>
     </ul>
   </nav>
@@ -163,17 +182,17 @@ const faqJsonLd = JSON.stringify({
     </div>
     <div id="particles" aria-hidden="true"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Cabinet NeurOasis · NeurOptimal® · Nantes & Clisson</p>
-      <h1 class="hero-title">Retrouvez<br /><em>la sérénité</em><br />naturellement</h1>
+      <p class="hero-eyebrow">NeurOptimal® · Nantes & Clisson</p>
+      <h1 class="hero-title">
+        Retrouvez<br /><em>sérénité, bien-être</em><br />et performance<br />naturellement
+      </h1>
       <p class="hero-sub">
-        Le neurofeedback dynamique donne au cerveau une information en temps réel sur sa propre
-        activité afin de soutenir son auto-régulation, sans intervention invasive ni effort
-        volontaire particulier.
+        En soutenant les capacités naturelles d'auto-régulation du cerveau, NeurOptimal® favorise un
+        meilleur équilibre mental et émotionnel ainsi que l'optimisation des capacités d'adaptation
+        face au stress.
       </p>
       <div class="hero-actions">
-        <a href="https://www.doctolib.fr" target="_blank" rel="noopener noreferrer" class="btn-primary"
-          >Prendre rendez-vous</a
-        >
+        <a href="#booking" class="btn-primary">Prendre rendez-vous</a>
         <a href="#what" class="btn-outline">Découvrir</a>
       </div>
     </div>
@@ -190,13 +209,6 @@ const faqJsonLd = JSON.stringify({
       <div>
         <span class="section-tag">Comprendre</span>
         <h2 class="section-title" id="what-title">Qu'est-ce que le<br /><em>neurofeedback dynamique</em> ?</h2>
-        <p class="section-lead" style="margin-bottom:2rem">
-          NeurOptimal® est présenté comme un entraînement cérébral non invasif. Des capteurs lisent
-          l'activité électrique au niveau du cuir chevelu et des oreilles, puis le système renvoie
-          une information sonore très brève lorsque cette activité varie rapidement. L'objectif
-          n'est pas de forcer le cerveau, mais de lui offrir un miroir en temps réel pour qu'il
-          ajuste lui-même son fonctionnement.
-        </p>
         <div class="what-cards">
           <div class="what-card">
             <h3>🧬 Un miroir pour votre cerveau</h3>
@@ -223,6 +235,23 @@ const faqJsonLd = JSON.stringify({
             </p>
           </div>
         </div>
+        <aside class="method-context" aria-label="Repères sur NeurOptimal®">
+          <span>Une pratique internationale</span>
+          <p>
+            Développé par Zengar® depuis 1996, NeurOptimal® est une neurotechnologie d'entraînement
+            cérébral qui s'inscrit dans le champ des neurosciences et s'appuie sur la capacité du
+            cerveau à ajuster et réorganiser son activité, associée à la plasticité cérébrale. Le
+            système est aujourd'hui présent dans 87 pays.
+          </p>
+          <a
+            href="https://neuroptimal.com/about/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Consulter l'histoire de NeurOptimal® sur le site officiel"
+          >
+            Source officielle NeurOptimal® →
+          </a>
+        </aside>
       </div>
     </div>
   </section>
@@ -261,8 +290,9 @@ const faqJsonLd = JSON.stringify({
         <div class="principle-card">
           <h3>4. Favoriser l'auto-régulation</h3>
           <p>
-            Informé de sa propre activité, le cerveau peut ajuster son organisation avec davantage
-            de souplesse. La démarche est décrite comme un entraînement, pas comme un acte médical.
+            Comme une forme d'entraînement cérébral, le cerveau mobilise ses capacités naturelles
+            d'auto-régulation. Informé durant la séance de sa propre activité, il peut ajuster son
+            organisation avec davantage de souplesse.
           </p>
         </div>
       </div>
@@ -276,10 +306,23 @@ const faqJsonLd = JSON.stringify({
         Comment se déroule<br /><em style="color:var(--sage)">une séance ?</em>
       </h2>
       <p class="section-lead">
-        Une séance dure environ 45 minutes à 1 heure. Elle est douce, agréable et ne demande
-        aucune préparation particulière : la personne s'installe, écoute, et le système fonctionne
-        en arrière-plan.
+        Une séance dure 1 heure. Elle est douce, agréable et ne demande aucune préparation
+        particulière : la personne s'installe, écoute de la musique et le système fonctionne tout
+        seul.
       </p>
+      <figure class="session-visual">
+        <img
+          src={`${basePath}/images/seance-neurofeedback.jpg`}
+          alt="Personne installée dans un fauteuil avec des capteurs de neurofeedback sur le cuir chevelu et les oreilles"
+          width="1400"
+          height="933"
+          loading="lazy"
+        />
+        <figcaption>
+          Visuel d'illustration : les capteurs lisent l'activité électrique naturelle sans envoyer
+          de courant au cerveau.
+        </figcaption>
+      </figure>
       <div class="steps">
         <div class="step">
           <div class="step-num" aria-hidden="true">01</div>
@@ -322,9 +365,20 @@ const faqJsonLd = JSON.stringify({
       <span class="section-tag">Pour qui ?</span>
       <h2 class="section-title" id="forwhom-title">Le neurofeedback<br />est accessible à <em>tous</em></h2>
       <p class="section-lead">
-        Le neurofeedback dynamique est souvent recherché dans une logique de bien-être, de
-        récupération et d'optimisation du fonctionnement quotidien. Les bénéfices ressentis restent
-        variables selon les personnes.
+        Enfants, adolescents, adultes et seniors peuvent découvrir le neurofeedback dynamique dans
+        une logique de bien-être, de récupération et d'optimisation du fonctionnement quotidien.
+      </p>
+      <ul class="audience-list" aria-label="Publics concernés">
+        <li>Enfants</li>
+        <li>Adolescents</li>
+        <li>Adultes</li>
+        <li>Seniors</li>
+      </ul>
+      <p class="forwhom-note">
+        NeurOptimal® peut soutenir le développement personnel, l'amélioration des performances
+        sportives ainsi que des compétences scolaires et professionnelles. Il peut s'intégrer en
+        complément d'une démarche de soin, sans s'y substituer. Les ressentis restent variables
+        selon les personnes.
       </p>
       <div class="conditions-grid">
         <div class="condition-card">
@@ -352,7 +406,7 @@ const faqJsonLd = JSON.stringify({
           <div>
             <h3>Attention & clarté mentale</h3>
             <p>
-              Enfants, étudiants ou adultes peuvent rechercher plus de fluidité cognitive, de
+              Enfants, adolescents et adultes peuvent rechercher plus de fluidité cognitive, de
               stabilité attentionnelle et de disponibilité mentale.
             </p>
           </div>
@@ -402,11 +456,10 @@ const faqJsonLd = JSON.stringify({
           </button>
           <div class="faq-answer" id="faq-a1">
             <p>
-              Le neurofeedback dynamique est présenté comme une méthode non invasive : les capteurs
-              lisent l'activité électrique naturelle, mais n'envoient aucun courant au cerveau. Pour
-              le site, il est préférable de rester prudent dans la formulation et d'éviter les
-              promesses absolues ; en cas de doute personnel, le bon réflexe reste de demander l'avis
-              de son médecin.
+              Le neurofeedback dynamique est présenté comme une méthode fonctionnelle et non
+              invasive : ce sont des capteurs qui lisent l'activité électrique naturelle, mais ils
+              n'envoient aucun courant au cerveau. En cas de doute personnel, n'hésitez pas à
+              demander l'avis de votre médecin.
             </p>
           </div>
         </div>
@@ -416,10 +469,11 @@ const faqJsonLd = JSON.stringify({
           </button>
           <div class="faq-answer" id="faq-a2">
             <p>
-              Il n'existe pas de nombre universel. Certaines personnes souhaitent découvrir la
-              méthode sur quelques séances, d'autres préfèrent s'inscrire dans un accompagnement plus
-              progressif. L'idée la plus juste pour le prototype est de parler d'une évolution au fil
-              du temps, variable selon les objectifs et les ressentis.
+              C'est très variable : certaines personnes souhaitent découvrir la méthode sur quelques
+              séances, d'autres préfèrent s'inscrire dans un accompagnement plus progressif. L'idée
+              la plus juste est de raisonner en termes d'évolution au fil du temps, variable selon
+              les objectifs et les ressentis. Le premier rendez-vous avec le psychologue clinicien
+              sert à établir une première base à partir des besoins initiaux.
             </p>
           </div>
         </div>
@@ -429,9 +483,9 @@ const faqJsonLd = JSON.stringify({
           </button>
           <div class="faq-answer" id="faq-a3">
             <p>
-              Non, les séances ne sont pas prises en charge par l'Assurance Maladie. Certaines
-              mutuelles remboursent partiellement les médecines douces et le bien-être.
-              Renseignez-vous auprès de votre organisme complémentaire.
+              Les séances ne sont pas prises en charge par l'Assurance Maladie. Certaines
+              complémentaires santé peuvent toutefois prévoir une participation selon leurs
+              contrats : renseignez-vous directement auprès de votre organisme.
             </p>
           </div>
         </div>
@@ -441,10 +495,9 @@ const faqJsonLd = JSON.stringify({
           </button>
           <div class="faq-answer" id="faq-a4">
             <p>
-              Non. D'après la documentation officielle du fabricant, NeurOptimal® est présenté comme
-              un outil de brain training et de bien-être, pas comme un dispositif destiné à
-              diagnostiquer, traiter ou guérir une maladie. Il peut s'inscrire en complément d'une
-              démarche globale, sans remplacer un suivi médical.
+              Non. NeurOptimal® est présenté comme un outil d'entraînement cérébral et de bien-être,
+              pas comme un dispositif destiné à diagnostiquer, traiter ou guérir une maladie. Il
+              peut s'inscrire en complément d'une démarche globale, sans remplacer un suivi médical.
             </p>
           </div>
         </div>
@@ -458,53 +511,13 @@ const faqJsonLd = JSON.stringify({
           <div class="faq-answer" id="faq-a5">
             <p>
               Contrairement à ces pratiques, le neurofeedback ne repose pas sur une consigne mentale,
-              une respiration spécifique ou un apprentissage conscient. La personne écoute la séance
-              pendant que le système renvoie des informations auditives très brèves. Les approches
-              peuvent être complémentaires.
+              une respiration spécifique ou un apprentissage conscient. La personne écoute
+              simplement de la musique pendant que le système renvoie des informations auditives très
+              brèves. Les approches peuvent être complémentaires.
             </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="testimonials" aria-labelledby="testimonials-title">
-    <div class="inner">
-      <span class="section-tag">Témoignages</span>
-      <h2 class="section-title" id="testimonials-title">Ce qu'ils <em>ressentent</em></h2>
-      <div class="testimonials-grid">
-        <figure class="testimonial">
-          <blockquote>
-            <p>
-              Après 10 séances, mon niveau d'anxiété a considérablement baissé. Je dors enfin
-              profondément. C'est comme si mon cerveau avait appris à se poser.
-            </p>
-          </blockquote>
-          <figcaption><cite>Sophie M., 38 ans</cite></figcaption>
-        </figure>
-        <figure class="testimonial">
-          <blockquote>
-            <p>
-              Mon fils de 9 ans avait du mal à se concentrer à l'école. Ses enseignants eux-mêmes
-              ont remarqué la différence après quelques semaines seulement.
-            </p>
-          </blockquote>
-          <figcaption><cite>Parents de Lucas</cite></figcaption>
-        </figure>
-        <figure class="testimonial">
-          <blockquote>
-            <p>
-              En tant que sportif de haut niveau, j'ai voulu optimiser ma gestion du stress avant
-              les compétitions. Les résultats ont dépassé toutes mes attentes.
-            </p>
-          </blockquote>
-          <figcaption><cite>Thomas R., 26 ans</cite></figcaption>
-        </figure>
-      </div>
-      <p style="margin-top:2rem;font-size:.75rem;color:var(--text-light);font-style:italic">
-        * Témoignages illustratifs. Les résultats varient selon les individus. Le neurofeedback ne
-        remplace pas un suivi médical.
-      </p>
     </div>
   </section>
 
@@ -515,20 +528,64 @@ const faqJsonLd = JSON.stringify({
         Commencez votre<br /><em style="color:var(--sage)">voyage intérieur</em>
       </h2>
       <p class="section-lead">
-        Prenez rendez-vous en ligne en quelques secondes via Doctolib. La première séance permet de
-        découvrir le cadre, de poser vos questions et de comprendre si cette approche correspond à
-        votre recherche de mieux-être.
+        Prenez rendez-vous directement avec le praticien de votre choix. Ce premier échange permet
+        de préciser vos besoins, de poser vos questions et de définir une première base pour
+        l'accompagnement.
       </p>
-      <a
-        href="https://www.doctolib.fr"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-primary"
-        aria-label="Réserver une séance de neurofeedback sur Doctolib"
-      >
-        Réserver sur Doctolib →
-      </a>
-      <p class="booking-note">Disponibilités en temps réel · Confirmation immédiate · Rappel automatique</p>
+      <div class="practitioners-grid">
+        <article class="practitioner-card">
+          <img
+            src={`${basePath}/images/aude-rehault.jpg`}
+            alt="Portrait d'Aude Réhault"
+            width="894"
+            height="900"
+            loading="lazy"
+          />
+          <div class="practitioner-content">
+            <h3>Aude Réhault</h3>
+            <p class="practitioner-role">Psychologue clinicienne – Psychothérapeute</p>
+            <a
+              href="https://www.doctolib.fr/psychologue/nantes/aude-rehault"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary"
+              aria-label="Prendre rendez-vous avec Aude Réhault sur Doctolib"
+            >
+              Prendre rendez-vous →
+            </a>
+          </div>
+        </article>
+        <article class="practitioner-card">
+          <img
+            src={`${basePath}/images/charles-antoine-menanteau.jpg`}
+            alt="Portrait de Charles-Antoine Menanteau"
+            width="900"
+            height="752"
+            loading="lazy"
+          />
+          <div class="practitioner-content">
+            <h3>Charles-Antoine Menanteau</h3>
+            <p class="practitioner-role">Psychologue clinicien – Psychothérapeute</p>
+            <a
+              href="https://www.doctolib.fr/psychologue/nantes/charles-antoine-menanteau"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary"
+              aria-label="Prendre rendez-vous avec Charles-Antoine Menanteau sur Doctolib"
+            >
+              Prendre rendez-vous →
+            </a>
+          </div>
+        </article>
+      </div>
+      <aside class="rental-note">
+        <strong>Location du système</strong>
+        <p>
+          Pour un entraînement régulier, la location d'un système NeurOptimal® peut être étudiée au
+          cas par cas, selon les besoins et les conditions d'utilisation. Parlez-en simplement lors
+          de votre rendez-vous.
+        </p>
+      </aside>
     </div>
   </section>
 
@@ -536,85 +593,49 @@ const faqJsonLd = JSON.stringify({
     <div class="inner">
       <div class="contact-info">
         <span class="section-tag">Nous trouver</span>
-        <h2 class="section-title" id="contact-title">Le <em>cabinet</em></h2>
-        <p class="section-lead">Un espace pensé pour la sérénité, au calme, facilement accessible.</p>
+        <h2 class="section-title" id="contact-title">Nantes <em>& Clisson</em></h2>
         <address class="contact-items">
           <div class="contact-item">
             <div class="contact-item-icon" aria-hidden="true">📍</div>
             <div>
               <div class="contact-item-label">Nantes</div>
-              <div class="contact-item-value">12 rue des Érables<br />44000 Nantes</div>
+              <div class="contact-item-value">7 rue des Rochettes<br />44000 Nantes</div>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon" aria-hidden="true">📍</div>
             <div>
               <div class="contact-item-label">Clisson</div>
-              <div class="contact-item-value">3 place du Minage<br />44190 Clisson</div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon" aria-hidden="true">📞</div>
-            <div>
-              <div class="contact-item-label">Téléphone</div>
-              <div class="contact-item-value"><a href="tel:+33123456789">01 23 45 67 89</a></div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon" aria-hidden="true">✉️</div>
-            <div>
-              <div class="contact-item-label">Email</div>
-              <div class="contact-item-value">
-                <a href="mailto:contact@neuroasis.fr">contact@neuroasis.fr</a>
-              </div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon" aria-hidden="true">🕐</div>
-            <div>
-              <div class="contact-item-label">Horaires</div>
-              <div class="contact-item-value">
-                Lundi – Vendredi : 9h – 19h<br />Samedi : 9h – 13h
-              </div>
+              <div class="contact-item-value">26 rue des Saules<br />44190 Clisson</div>
             </div>
           </div>
         </address>
       </div>
       <div>
-        <div class="map-placeholder" role="img" aria-label="Localisation : Nantes et Clisson">
+        <div class="map-placeholder" aria-label="Adresses de NeurOasis à Nantes et Clisson">
           <div class="map-pin">
             <svg width="60" height="60" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M32 6C22 6 14 14 14 24c0 14 18 34 18 34s18-20 18-34c0-10-8-18-18-18z" fill="#4a7a52"></path>
               <circle cx="32" cy="24" r="7" fill="white"></circle>
             </svg>
           </div>
-          <p style="font-size:.8rem;color:var(--text-light);text-align:center">
-            📍 Nantes · 📍 Clisson<br /><br />
+          <p class="map-addresses">
+            7 rue des Rochettes, Nantes<br />26 rue des Saules, Clisson<br /><br />
             <a
-              href="https://maps.google.com/?q=Nantes+44000"
+              href="https://www.google.com/maps/search/?api=1&amp;query=7+rue+des+Rochettes+44000+Nantes"
               target="_blank"
               rel="noopener noreferrer"
-              style="color:var(--forest-light);text-decoration:none;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--mist)"
             >
               Nantes →
             </a>
             &nbsp;&nbsp;
             <a
-              href="https://maps.google.com/?q=Clisson+44190"
+              href="https://www.google.com/maps/search/?api=1&amp;query=26+rue+des+Saules+44190+Clisson"
               target="_blank"
               rel="noopener noreferrer"
-              style="color:var(--forest-light);text-decoration:none;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--mist)"
             >
               Clisson →
             </a>
-          </p>
-        </div>
-        <div class="access-info">
-          <p>
-            🚆 <strong>Nantes :</strong> Tramway ligne 1 – arrêt Commerce<br />🚆 <strong>Clisson
-              :</strong> Gare SNCF à 5 min à pied (ligne Nantes–Clisson)<br />🚗
-            <strong>Clisson depuis Nantes :</strong> 30 min par la N149<br />♿
-            <strong>Accessibilité :</strong> Cabinets accessibles PMR
           </p>
         </div>
       </div>
@@ -630,15 +651,11 @@ const faqJsonLd = JSON.stringify({
       <li><a href="#forwhom">Pour qui ?</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="#">Mentions légales</a></li>
-      <li><a href="#">Politique de confidentialité</a></li>
     </ul>
     <p class="footer-copy">
-      © 2025 Cabinet NeurOasis · Nantes & Clisson · <a href="tel:+33123456789" style="color:inherit"
-        >01 23 45 67 89</a
-      ><br />
+      © {currentYear} NeurOasis · Nantes & Clisson<br />
       Le neurofeedback ne se substitue pas à un traitement médical · NeurOptimal® est présenté
-      comme un outil de brain training et de bien-être · NeurOptimal® est une marque déposée de
+      comme un outil d'entraînement cérébral et de bien-être · NeurOptimal® est une marque déposée de
       Zengar Institute Inc.
     </p>
   </footer>
@@ -699,7 +716,7 @@ const faqJsonLd = JSON.stringify({
     );
 
     document
-      .querySelectorAll(".what-card,.step,.condition-card,.testimonial,.principle-card")
+      .querySelectorAll(".what-card,.step,.condition-card,.principle-card,.practitioner-card,.session-visual")
       .forEach((entry) => {
         entry.style.opacity = "0";
         entry.style.transform = "translateY(16px)";
@@ -750,9 +767,9 @@ const faqJsonLd = JSON.stringify({
     .hero-content { position: relative; z-index: 10; text-align: center; padding: 2rem; }
     @keyframes fadeUp { from { opacity:0; transform: translateY(30px); } to { opacity:1; transform: translateY(0); } }
     .hero-eyebrow { font-size:.72rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:1.4rem; animation: fadeUp 1.2s .2s ease both; }
-    .hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,7vw,6.5rem); font-weight:300; line-height:1.05; color:var(--cream); margin-bottom:1.6rem; animation: fadeUp 1.2s .4s ease both; }
+    .hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.8rem,5.6vw,5.2rem); font-weight:300; line-height:1.02; color:var(--cream); margin:0 auto 1.6rem; max-width:920px; animation: fadeUp 1.2s .4s ease both; }
     .hero-title em { font-style:italic; color:var(--sage); }
-    .hero-sub { font-size:1rem; font-weight:300; color:rgba(245,240,232,.75); max-width:500px; margin:0 auto 2.8rem; line-height:1.8; animation: fadeUp 1.2s .6s ease both; }
+    .hero-sub { font-size:1rem; font-weight:300; color:rgba(245,240,232,.75); max-width:650px; margin:0 auto 2.3rem; line-height:1.8; animation: fadeUp 1.2s .6s ease both; }
     .hero-actions { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; animation: fadeUp 1.2s .8s ease both; }
     .btn-primary { display:inline-block; background:var(--gold); color:var(--forest-deep); padding:.9rem 2.2rem; font-family:'Jost',sans-serif; font-size:.78rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; border-radius:2px; transition:transform .3s, box-shadow .3s; }
     .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(201,169,110,.4); }
@@ -782,6 +799,10 @@ const faqJsonLd = JSON.stringify({
     .what-card:hover { border-color:var(--forest-light); transform:translateX(4px); }
     .what-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:600; color:var(--text-dark); margin-bottom:.4rem; }
     .what-card p { font-size:.88rem; font-weight:300; color:var(--text-mid); line-height:1.75; }
+    .method-context { margin-top:1.6rem; padding:1.4rem 1.6rem; border:1px solid var(--mist); border-radius:4px; background:rgba(245,240,232,.7); }
+    .method-context span { display:block; margin-bottom:.45rem; font-size:.67rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--moss); }
+    .method-context p { font-size:.84rem; font-weight:300; color:var(--text-mid); line-height:1.75; }
+    .method-context a { display:inline-block; margin-top:.7rem; color:var(--forest-light); font-size:.72rem; font-weight:500; letter-spacing:.08em; text-decoration:none; border-bottom:1px solid var(--mist); }
     #principles { background:var(--parchment); }
     #principles .inner, #how .inner, #forwhom .inner, #contact .inner { max-width:1100px; margin:0 auto; }
     #principles .section-lead { margin-bottom:3rem; }
@@ -795,7 +816,10 @@ const faqJsonLd = JSON.stringify({
     #how .section-title { color:var(--cream); }
     #how .section-tag { color:var(--gold); }
     #how .section-lead { color:rgba(245,240,232,.7); }
-    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; margin-top:4rem; }
+    .session-visual { margin:3rem 0 1rem; }
+    .session-visual img { display:block; width:100%; height:auto; max-height:560px; object-fit:cover; border-radius:6px; box-shadow:0 22px 60px rgba(0,0,0,.25); }
+    .session-visual figcaption { margin-top:.75rem; font-size:.72rem; font-weight:300; color:rgba(245,240,232,.5); text-align:right; }
+    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; margin-top:3rem; }
     .step { padding:2rem 1.5rem; border-top:1px solid rgba(201,169,110,.3); transition:border-color .3s; }
     .step:hover { border-color:var(--gold); }
     .step-num { font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:rgba(201,169,110,.2); line-height:1; margin-bottom:1rem; }
@@ -803,7 +827,10 @@ const faqJsonLd = JSON.stringify({
     .step p { font-size:.84rem; font-weight:300; color:rgba(245,240,232,.6); line-height:1.8; }
     #forwhom { background:var(--parchment); }
     #forwhom .inner { text-align:center; }
-    #forwhom .section-lead { margin:0 auto 3.5rem; }
+    #forwhom .section-lead { margin:0 auto 1.6rem; }
+    .audience-list { display:flex; flex-wrap:wrap; justify-content:center; gap:.7rem; margin-bottom:1.5rem; list-style:none; }
+    .audience-list li { padding:.5rem 1rem; border:1px solid var(--mist); border-radius:999px; background:var(--cream); color:var(--forest-light); font-size:.75rem; font-weight:500; letter-spacing:.08em; text-transform:uppercase; }
+    .forwhom-note { max-width:800px; margin:0 auto 3.5rem; color:var(--text-mid); font-size:.9rem; font-weight:300; line-height:1.8; }
     .conditions-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; text-align:left; }
     .condition-card { background:var(--cream); padding:2rem; border-radius:4px; display:flex; gap:1.2rem; align-items:flex-start; transition:transform .3s,box-shadow .3s; border:1px solid transparent; }
     .condition-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(26,46,30,.1); border-color:var(--mist); }
@@ -821,20 +848,22 @@ const faqJsonLd = JSON.stringify({
     .faq-answer { max-height:0; overflow:hidden; transition:max-height .4s ease; }
     .faq-item.open .faq-answer { max-height:420px; }
     .faq-answer p { padding:0 0 1.4rem; font-size:.9rem; font-weight:300; color:var(--text-mid); line-height:1.85; }
-    #testimonials { background:var(--parchment); text-align:center; }
-    #testimonials .inner { max-width:900px; margin:0 auto; }
-    .testimonials-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:3.5rem; text-align:left; }
-    .testimonial { padding:2rem; background:var(--cream); border-radius:4px; position:relative; }
-    .testimonial::before { content:'"'; font-family:'Cormorant Garamond',serif; font-size:5rem; line-height:1; color:var(--mist); position:absolute; top:.5rem; left:1.2rem; }
-    .testimonial blockquote p { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-style:italic; color:var(--text-mid); line-height:1.75; padding-top:1.5rem; }
-    .testimonial figcaption cite { display:block; margin-top:1rem; font-size:.75rem; font-style:normal; letter-spacing:.15em; text-transform:uppercase; color:var(--moss); }
     #booking { background:var(--forest-mid); position:relative; overflow:hidden; text-align:center; }
     #booking::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(74,122,82,.3) 0%,transparent 70%); }
-    #booking .inner { max-width:700px; margin:0 auto; position:relative; z-index:2; }
+    #booking .inner { max-width:1050px; margin:0 auto; position:relative; z-index:2; }
     #booking .section-title { color:var(--cream); }
     #booking .section-tag { color:var(--gold); }
     #booking .section-lead { color:rgba(245,240,232,.7); margin:0 auto 2.5rem; text-align:center; }
-    .booking-note { margin-top:1.5rem; font-size:.78rem; color:rgba(245,240,232,.45); }
+    .practitioners-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; text-align:left; }
+    .practitioner-card { display:grid; grid-template-columns:150px 1fr; overflow:hidden; min-height:260px; background:var(--cream); border:1px solid rgba(201,169,110,.3); border-radius:6px; box-shadow:0 18px 50px rgba(13,26,15,.18); }
+    .practitioner-card > img { width:100%; height:100%; object-fit:cover; object-position:center; }
+    .practitioner-content { display:flex; flex-direction:column; align-items:flex-start; padding:1.7rem; }
+    .practitioner-content h3 { font-family:'Cormorant Garamond',serif; font-size:1.55rem; font-weight:600; line-height:1.1; color:var(--text-dark); }
+    .practitioner-role { margin:.55rem 0 1.5rem; color:var(--text-mid); font-size:.82rem; font-weight:300; line-height:1.5; }
+    .practitioner-content .btn-primary { margin-top:auto; padding:.75rem 1rem; font-size:.64rem; letter-spacing:.11em; }
+    .rental-note { max-width:760px; margin:2.5rem auto 0; padding-top:1.5rem; border-top:1px solid rgba(245,240,232,.18); color:rgba(245,240,232,.58); }
+    .rental-note strong { display:block; margin-bottom:.45rem; color:rgba(245,240,232,.75); font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-weight:400; }
+    .rental-note p { font-size:.78rem; font-weight:300; line-height:1.7; }
     #contact { background:var(--cream); }
     #contact .inner { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
     .contact-items { margin-top:2.5rem; display:flex; flex-direction:column; gap:1.8rem; }
@@ -846,8 +875,8 @@ const faqJsonLd = JSON.stringify({
     .map-placeholder { background:var(--parchment); border-radius:6px; height:320px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; border:1px solid var(--mist); }
     .map-pin { animation:pin-pulse 2s ease-in-out infinite; }
     @keyframes pin-pulse { 0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)} }
-    .access-info { margin-top:1.5rem; padding:1.5rem; background:var(--parchment); border-radius:4px; border:1px solid var(--mist); }
-    .access-info p { font-size:.82rem; color:var(--text-mid); line-height:1.9; }
+    .map-addresses { font-size:.82rem; font-style:normal; color:var(--text-light); line-height:1.7; text-align:center; }
+    .map-addresses a { color:var(--forest-light); text-decoration:none; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; border-bottom:1px solid var(--mist); }
     footer { background:var(--forest-deep); padding:3rem 2rem; text-align:center; }
     .footer-logo { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:300; color:var(--cream); letter-spacing:.1em; margin-bottom:.5rem; }
     .footer-logo span { color:var(--gold); font-style:italic; }
@@ -862,11 +891,21 @@ const faqJsonLd = JSON.stringify({
       .what-grid,#contact .inner { grid-template-columns:1fr; gap:3rem; }
       .what-visual { height:260px; }
       .steps,.principles-grid { grid-template-columns:1fr 1fr; }
-      .conditions-grid,.testimonials-grid { grid-template-columns:1fr; }
+      .conditions-grid,.practitioners-grid { grid-template-columns:1fr; }
+      .practitioners-grid { max-width:620px; margin:0 auto; }
     }
     @media(max-width:500px) {
       .steps,.principles-grid { grid-template-columns:1fr; }
       section { padding:5rem 1.5rem; }
+      #hero { min-height:720px; }
+      .hero-content { padding:5rem 1.25rem 3rem; }
+      .hero-title { font-size:clamp(2.45rem,12vw,3.25rem); }
+      .hero-sub { font-size:.9rem; line-height:1.65; }
+      .scroll-hint { display:none; }
+      .practitioner-card { grid-template-columns:1fr; }
+      .practitioner-card > img { height:230px; }
+      .practitioner-content { min-height:220px; }
+      .session-visual figcaption { text-align:left; }
     }
   </style>
 </Layout>

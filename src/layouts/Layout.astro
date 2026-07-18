@@ -7,7 +7,7 @@ interface Props {
 
 const {
   title = "NeurOasis",
-  description = "Cabinet NeurOasis",
+  description = "NeurOasis",
   lang = "fr",
 } = Astro.props;
 const basePath = import.meta.env.BASE_URL;
@@ -18,8 +18,8 @@ const basePath = import.meta.env.BASE_URL;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href={`${basePath}favicon.svg`} />
-		<link rel="icon" href={`${basePath}favicon.ico`} />
+		<link rel="icon" type="image/svg+xml" href={`${basePath}/favicon.svg`} />
+		<link rel="icon" href={`${basePath}/favicon.ico`} />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<title>{title}</title>
