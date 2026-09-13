@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const title = "Neurofeedback dynamique NeurOptimal® à Nantes et Clisson | NeurOasis";
+const title = "NeurOptimal® à Nantes et Clisson | NeurOasis";
 const description =
-  "Séances de neurofeedback dynamique NeurOptimal® à Nantes et Clisson : un entraînement cérébral non invasif au service du bien-être et de l'adaptation face au stress.";
+  "Séances NeurOptimal® à Nantes et Clisson : un entraînement cérébral non invasif au service du bien-être et de l'adaptation face au stress.";
 const pagesUrl = "https://thomasrehault-ux.github.io/site-neuroasis-neurofeedback";
 const basePath = import.meta.env.BASE_URL;
 const currentYear = new Date().getFullYear();
@@ -13,7 +13,7 @@ const healthBusinessJsonLd = JSON.stringify({
   "@type": "HealthAndBeautyBusiness",
   name: "NeurOasis",
   description:
-    "Séances de neurofeedback dynamique NeurOptimal® à Nantes et Clisson, proposées comme un entraînement cérébral non invasif et une démarche de bien-être.",
+    "Séances NeurOptimal® à Nantes et Clisson, proposées comme un entraînement cérébral non invasif et une démarche de bien-être.",
   url: pagesUrl,
   image: `${pagesUrl}/images/seance-neurofeedback.jpg`,
   location: [
@@ -62,23 +62,23 @@ const faqJsonLd = JSON.stringify({
   mainEntity: [
     {
       "@type": "Question",
-      name: "Le neurofeedback dynamique est-il dangereux ?",
+      name: "NeurOptimal® est-il dangereux ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Le neurofeedback dynamique est présenté comme une méthode fonctionnelle et non invasive : ce sont des capteurs qui lisent l'activité électrique naturelle, mais ils n'envoient aucun courant au cerveau. En cas de doute personnel, n'hésitez pas à demander l'avis de votre médecin.",
+        text: "Non. NeurOptimal® est présenté comme une méthode non invasive : des capteurs lisent l'activité électrique naturelle, mais ils n'envoient aucun courant au cerveau. En cas de doute, n'hésitez pas à demander l'avis de votre médecin.",
       },
     },
     {
       "@type": "Question",
-      name: "Combien de séances de neurofeedback faut-il ?",
+      name: "Combien de séances sont nécessaires ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "C'est très variable : certaines personnes souhaitent découvrir la méthode sur quelques séances, d'autres préfèrent s'inscrire dans un accompagnement plus progressif. L'idée la plus juste est de raisonner en termes d'évolution au fil du temps, variable selon les objectifs et les ressentis. Le premier rendez-vous avec le psychologue clinicien sert à établir une première base à partir des besoins initiaux.",
+        text: "L'idée la plus juste serait de raisonner en termes d'évolution.",
       },
     },
     {
       "@type": "Question",
-      name: "Le neurofeedback est-il remboursé par la Sécurité sociale ?",
+      name: "NeurOptimal® est-il remboursé par la Sécurité sociale ?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Les séances ne sont pas prises en charge par l'Assurance Maladie. Certaines complémentaires santé peuvent toutefois prévoir une participation selon leurs contrats : renseignez-vous directement auprès de votre organisme.",
@@ -89,7 +89,7 @@ const faqJsonLd = JSON.stringify({
       name: "Est-ce une méthode médicale ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Non. NeurOptimal® est présenté comme un outil d'entraînement cérébral et de bien-être, pas comme un dispositif destiné à diagnostiquer, traiter ou guérir une maladie. Il peut s'inscrire en complément d'une démarche globale, sans remplacer un suivi médical.",
+        text: "NeurOptimal® est un outil d'entraînement cérébral et de bien-être, non un dispositif destiné à diagnostiquer, traiter ou guérir une maladie. Il peut s'inscrire en complément d'une démarche globale, sans remplacer un suivi médical.",
       },
     },
     {
@@ -97,7 +97,7 @@ const faqJsonLd = JSON.stringify({
       name: "Quelle différence avec la méditation ou la sophrologie ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Contrairement à ces pratiques, le neurofeedback ne repose pas sur une consigne mentale, une respiration spécifique ou un apprentissage conscient. La personne écoute simplement de la musique pendant que le système renvoie des informations auditives très brèves. Les approches peuvent être complémentaires.",
+        text: "Contrairement à ces pratiques, NeurOptimal® ne repose pas sur une consigne mentale, une respiration spécifique ou un apprentissage conscient. La personne écoute simplement de la musique pendant que le système renvoie des informations auditives très brèves. Les approches peuvent être complémentaires.",
       },
     },
   ],
@@ -108,7 +108,7 @@ const faqJsonLd = JSON.stringify({
   <Fragment slot="head">
     <meta
       name="keywords"
-      content="neurofeedback, neurofeedback dynamique, NeurOptimal®, neurofeedback Nantes, neurofeedback Clisson, entraînement cérébral, bien-être"
+      content="NeurOptimal®, NeurOptimal® Nantes, NeurOptimal® Clisson, entraînement cérébral, bien-être"
     />
     <meta name="author" content="NeurOasis" />
     <meta name="robots" content="index, follow" />
@@ -124,7 +124,7 @@ const faqJsonLd = JSON.stringify({
     <meta property="og:site_name" content="NeurOasis" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Neurofeedback dynamique NeurOptimal® | NeurOasis" />
+    <meta name="twitter:title" content="NeurOptimal® à Nantes et Clisson | NeurOasis" />
     <meta
       name="twitter:description"
       content="Retrouvez sérénité, bien-être et performance naturellement avec NeurOptimal® à Nantes et Clisson."
@@ -145,7 +145,7 @@ const faqJsonLd = JSON.stringify({
   <nav id="navbar" role="navigation" aria-label="Navigation principale">
     <a href={`${basePath}/`} class="nav-logo" aria-label="NeurOasis – Accueil">Neur<span>Oasis</span></a>
     <ul class="nav-links">
-      <li><a href="#what">Le neurofeedback</a></li>
+      <li><a href="#what">NeurOptimal®</a></li>
       <li><a href="#principles">Le fonctionnement</a></li>
       <li><a href="#how">La séance</a></li>
       <li><a href="#forwhom">Pour qui ?</a></li>
@@ -208,40 +208,37 @@ const faqJsonLd = JSON.stringify({
       </div>
       <div>
         <span class="section-tag">Comprendre</span>
-        <h2 class="section-title" id="what-title">Qu'est-ce que le<br /><em>neurofeedback dynamique</em> ?</h2>
+        <h2 class="section-title" id="what-title">Qu'est-ce que<br /><em>NeurOptimal®</em> ?</h2>
         <div class="what-cards">
           <div class="what-card">
             <h3>🧬 Un miroir pour votre cerveau</h3>
             <p>
-              Des capteurs placés sur le cuir chevelu et les oreilles enregistrent l'activité
-              cérébrale naturelle. Ils n'envoient aucun courant : ils lisent simplement le signal et
-              permettent au système de le refléter instantanément.
+              NeurOptimal® est présenté comme un entraînement cérébral non invasif. Des capteurs
+              lisent l'activité électrique au niveau du cuir chevelu et des oreilles.
             </p>
           </div>
           <div class="what-card">
             <h3>🌊 L'auto-régulation naturelle</h3>
             <p>
-              Quand une variation rapide est détectée, la musique s'interrompt un instant. Ce
-              micro-retour agit comme une information immédiate qui laisse au cerveau la possibilité
-              de se réorganiser avec plus de souplesse.
+              Le système renvoie une information sonore très brève lorsque cette activité varie
+              rapidement.
             </p>
           </div>
           <div class="what-card">
             <h3>✨ Sans effort, sans diagnostic</h3>
             <p>
-              Vous écoutez simplement la séance. Il ne s'agit pas d'établir un diagnostic ni de
-              traiter une pathologie précise, mais d'accompagner un travail global de stabilité, de
-              flexibilité et de résilience.
+              L'objectif n'est pas de forcer le cerveau, mais de lui offrir un miroir en temps réel
+              pour qu'il ajuste lui-même son fonctionnement.
             </p>
           </div>
         </div>
         <aside class="method-context" aria-label="Repères sur NeurOptimal®">
           <span>Une pratique internationale</span>
           <p>
-            Développé par Zengar® depuis 1996, NeurOptimal® est une neurotechnologie d'entraînement
-            cérébral qui s'inscrit dans le champ des neurosciences et s'appuie sur la capacité du
-            cerveau à ajuster et réorganiser son activité, associée à la plasticité cérébrale. Le
-            système est aujourd'hui présent dans 87 pays.
+            Développé par Zengar® depuis 1996, NeurOptimal® est une méthode d'entraînement cérébral
+            qui s'inscrit dans le champ des neurosciences. Elle s'appuie sur la capacité naturelle du
+            cerveau à ajuster et réorganiser son activité grâce à la plasticité cérébrale. Le système
+            est aujourd'hui présent dans 87 pays.
           </p>
           <a
             href="https://neuroptimal.com/about/"
@@ -259,11 +256,11 @@ const faqJsonLd = JSON.stringify({
   <section id="principles" aria-labelledby="principles-title">
     <div class="inner">
       <span class="section-tag">Le fonctionnement</span>
-      <h2 class="section-title" id="principles-title">Comment agit le<br /><em>neurofeedback dynamique</em> ?</h2>
+      <h2 class="section-title" id="principles-title">Comment agit<br /><em>NeurOptimal®</em> ?</h2>
       <p class="section-lead">
         Pour comprendre la méthode, il suffit de suivre quatre repères simples : mesurer,
-        détecter, signaler, puis laisser le cerveau s'ajuster. C'est cette logique qui distingue le
-        neurofeedback dynamique d'une approche plus directive ou protocolaire.
+        détecter, signaler, puis laisser le cerveau s'ajuster. C'est cette logique qui distingue
+        NeurOptimal® d'une approche plus directive ou protocolaire.
       </p>
       <div class="principles-grid">
         <div class="principle-card">
@@ -313,7 +310,7 @@ const faqJsonLd = JSON.stringify({
       <figure class="session-visual">
         <img
           src={`${basePath}/images/seance-neurofeedback.jpg`}
-          alt="Personne installée dans un fauteuil avec des capteurs de neurofeedback sur le cuir chevelu et les oreilles"
+          alt="Personne installée dans un fauteuil avec des capteurs NeurOptimal® sur le cuir chevelu et les oreilles"
           width="1400"
           height="933"
           loading="lazy"
@@ -363,10 +360,10 @@ const faqJsonLd = JSON.stringify({
   <section id="forwhom" aria-labelledby="forwhom-title">
     <div class="inner">
       <span class="section-tag">Pour qui ?</span>
-      <h2 class="section-title" id="forwhom-title">Le neurofeedback<br />est accessible à <em>tous</em></h2>
+      <h2 class="section-title" id="forwhom-title">NeurOptimal®<br />est accessible à <em>tous</em></h2>
       <p class="section-lead">
-        Enfants, adolescents, adultes et seniors peuvent découvrir le neurofeedback dynamique dans
-        une logique de bien-être, de récupération et d'optimisation du fonctionnement quotidien.
+        Enfants, adolescents, adultes et seniors peuvent découvrir NeurOptimal® dans une logique de
+        bien-être, de récupération et d'optimisation du fonctionnement quotidien.
       </p>
       <ul class="audience-list" aria-label="Publics concernés">
         <li>Enfants</li>
@@ -375,10 +372,10 @@ const faqJsonLd = JSON.stringify({
         <li>Seniors</li>
       </ul>
       <p class="forwhom-note">
-        NeurOptimal® peut soutenir le développement personnel, l'amélioration des performances
-        sportives ainsi que des compétences scolaires et professionnelles. Il peut s'intégrer en
-        complément d'une démarche de soin, sans s'y substituer. Les ressentis restent variables
-        selon les personnes.
+        NeurOptimal® peut soutenir le développement personnel, les compétences scolaires et
+        professionnelles, l'accompagnement des seniors, ainsi que l'amélioration des performances
+        sportives. Il peut s'intégrer en complément d'une démarche de soin, sans s'y substituer. Les
+        ressentis restent variables selon les personnes.
       </p>
       <div class="conditions-grid">
         <div class="condition-card">
@@ -397,7 +394,7 @@ const faqJsonLd = JSON.stringify({
             <h3>Sommeil & récupération</h3>
             <p>
               Le travail se fait souvent autour de la qualité du repos, de la détente et de la
-              sensation de récupération, sans promettre le traitement d'un trouble médical.
+              sensation de récupération.
             </p>
           </div>
         </div>
@@ -452,14 +449,13 @@ const faqJsonLd = JSON.stringify({
       <div class="faq-list">
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false" aria-controls="faq-a1">
-            Le neurofeedback est-il dangereux ?<span class="faq-icon" aria-hidden="true">+</span>
+            NeurOptimal® est-il dangereux ?<span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" id="faq-a1">
             <p>
-              Le neurofeedback dynamique est présenté comme une méthode fonctionnelle et non
-              invasive : ce sont des capteurs qui lisent l'activité électrique naturelle, mais ils
-              n'envoient aucun courant au cerveau. En cas de doute personnel, n'hésitez pas à
-              demander l'avis de votre médecin.
+              Non. NeurOptimal® est présenté comme une méthode non invasive : des capteurs lisent
+              l'activité électrique naturelle, mais ils n'envoient aucun courant au cerveau. En cas
+              de doute, n'hésitez pas à demander l'avis de votre médecin.
             </p>
           </div>
         </div>
@@ -469,17 +465,13 @@ const faqJsonLd = JSON.stringify({
           </button>
           <div class="faq-answer" id="faq-a2">
             <p>
-              C'est très variable : certaines personnes souhaitent découvrir la méthode sur quelques
-              séances, d'autres préfèrent s'inscrire dans un accompagnement plus progressif. L'idée
-              la plus juste est de raisonner en termes d'évolution au fil du temps, variable selon
-              les objectifs et les ressentis. Le premier rendez-vous avec le psychologue clinicien
-              sert à établir une première base à partir des besoins initiaux.
+              L'idée la plus juste serait de raisonner en termes d'évolution.
             </p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false" aria-controls="faq-a3">
-            Le neurofeedback est-il remboursé ?<span class="faq-icon" aria-hidden="true">+</span>
+            NeurOptimal® est-il remboursé ?<span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" id="faq-a3">
             <p>
@@ -495,9 +487,9 @@ const faqJsonLd = JSON.stringify({
           </button>
           <div class="faq-answer" id="faq-a4">
             <p>
-              Non. NeurOptimal® est présenté comme un outil d'entraînement cérébral et de bien-être,
-              pas comme un dispositif destiné à diagnostiquer, traiter ou guérir une maladie. Il
-              peut s'inscrire en complément d'une démarche globale, sans remplacer un suivi médical.
+              NeurOptimal® est un outil d'entraînement cérébral et de bien-être, non un dispositif
+              destiné à diagnostiquer, traiter ou guérir une maladie. Il peut s'inscrire en
+              complément d'une démarche globale, sans remplacer un suivi médical.
             </p>
           </div>
         </div>
@@ -510,10 +502,10 @@ const faqJsonLd = JSON.stringify({
           </button>
           <div class="faq-answer" id="faq-a5">
             <p>
-              Contrairement à ces pratiques, le neurofeedback ne repose pas sur une consigne mentale,
-              une respiration spécifique ou un apprentissage conscient. La personne écoute
-              simplement de la musique pendant que le système renvoie des informations auditives très
-              brèves. Les approches peuvent être complémentaires.
+              Contrairement à ces pratiques, NeurOptimal® ne repose pas sur une consigne mentale, une
+              respiration spécifique ou un apprentissage conscient. La personne écoute simplement
+              de la musique pendant que le système renvoie des informations auditives très brèves.
+              Les approches peuvent être complémentaires.
             </p>
           </div>
         </div>
@@ -524,9 +516,7 @@ const faqJsonLd = JSON.stringify({
   <section id="booking" aria-labelledby="booking-title">
     <div class="inner">
       <span class="section-tag">Rendez-vous</span>
-      <h2 class="section-title" id="booking-title">
-        Commencez votre<br /><em style="color:var(--sage)">voyage intérieur</em>
-      </h2>
+      <h2 class="section-title" id="booking-title">Prendre rendez-vous</h2>
       <p class="section-lead">
         Prenez rendez-vous directement avec le praticien de votre choix. Ce premier échange permet
         de préciser vos besoins, de poser vos questions et de définir une première base pour
@@ -544,15 +534,26 @@ const faqJsonLd = JSON.stringify({
           <div class="practitioner-content">
             <h3>Aude Réhault</h3>
             <p class="practitioner-role">Psychologue clinicienne – Psychothérapeute</p>
-            <a
-              href="https://www.doctolib.fr/psychologue/nantes/aude-rehault"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-primary"
-              aria-label="Prendre rendez-vous avec Aude Réhault sur Doctolib"
-            >
-              Prendre rendez-vous →
-            </a>
+            <div class="practitioner-actions">
+              <a
+                href="https://www.doctolib.fr/psychologue/nantes/aude-rehault"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary"
+                aria-label="Prendre rendez-vous avec Aude Réhault sur Doctolib"
+              >
+                Prendre rendez-vous →
+              </a>
+              <a
+                href="https://thomasrehault-ux.github.io/site-aude-rehault/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="practitioner-site-link"
+                aria-label="Consulter le site internet d'Aude Réhault"
+              >
+                Voir son site internet →
+              </a>
+            </div>
           </div>
         </article>
         <article class="practitioner-card">
@@ -566,15 +567,26 @@ const faqJsonLd = JSON.stringify({
           <div class="practitioner-content">
             <h3>Charles-Antoine Menanteau</h3>
             <p class="practitioner-role">Psychologue clinicien – Psychothérapeute</p>
-            <a
-              href="https://www.doctolib.fr/psychologue/nantes/charles-antoine-menanteau"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-primary"
-              aria-label="Prendre rendez-vous avec Charles-Antoine Menanteau sur Doctolib"
-            >
-              Prendre rendez-vous →
-            </a>
+            <div class="practitioner-actions">
+              <a
+                href="https://www.doctolib.fr/psychologue/nantes/charles-antoine-menanteau"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary"
+                aria-label="Prendre rendez-vous avec Charles-Antoine Menanteau sur Doctolib"
+              >
+                Prendre rendez-vous →
+              </a>
+              <a
+                href="https://thomasrehault-ux.github.io/site-charles-antoine-menanteau/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="practitioner-site-link"
+                aria-label="Consulter le site internet de Charles-Antoine Menanteau"
+              >
+                Voir son site internet →
+              </a>
+            </div>
           </div>
         </article>
       </div>
@@ -644,19 +656,19 @@ const faqJsonLd = JSON.stringify({
 
   <footer role="contentinfo">
     <div class="footer-logo">Neur<span>Oasis</span></div>
-    <p class="footer-tagline">Neurofeedback Dynamique NeurOptimal® · Nantes & Clisson</p>
+    <p class="footer-tagline">NeurOptimal® · Nantes & Clisson</p>
     <ul class="footer-links">
-      <li><a href="#what">Le neurofeedback</a></li>
+      <li><a href="#what">NeurOptimal®</a></li>
       <li><a href="#how">La séance</a></li>
       <li><a href="#forwhom">Pour qui ?</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <p class="footer-copy">
-      © {currentYear} NeurOasis · Nantes & Clisson<br />
-      Le neurofeedback ne se substitue pas à un traitement médical · NeurOptimal® est présenté
-      comme un outil d'entraînement cérébral et de bien-être · NeurOptimal® est une marque déposée de
-      Zengar Institute Inc.
+      © {currentYear} NeurOasis · Tous droits réservés<br />
+      NeurOptimal® ne se substitue pas à un traitement médical · NeurOptimal® est un outil
+      d'entraînement cérébral et de bien-être · NeurOptimal® est une marque déposée de Zengar
+      Institute Inc.
     </p>
   </footer>
 
@@ -860,7 +872,10 @@ const faqJsonLd = JSON.stringify({
     .practitioner-content { display:flex; flex-direction:column; align-items:flex-start; padding:1.7rem; }
     .practitioner-content h3 { font-family:'Cormorant Garamond',serif; font-size:1.55rem; font-weight:600; line-height:1.1; color:var(--text-dark); }
     .practitioner-role { margin:.55rem 0 1.5rem; color:var(--text-mid); font-size:.82rem; font-weight:300; line-height:1.5; }
-    .practitioner-content .btn-primary { margin-top:auto; padding:.75rem 1rem; font-size:.64rem; letter-spacing:.11em; }
+    .practitioner-actions { display:flex; flex-direction:column; align-items:flex-start; gap:.8rem; margin-top:auto; }
+    .practitioner-content .btn-primary { padding:.75rem 1rem; font-size:.64rem; letter-spacing:.11em; }
+    .practitioner-site-link { color:var(--forest-light); font-size:.72rem; font-weight:500; letter-spacing:.06em; text-decoration:none; border-bottom:1px solid var(--mist); }
+    .practitioner-site-link:hover { color:var(--forest-deep); border-color:var(--forest-light); }
     .rental-note { max-width:760px; margin:2.5rem auto 0; padding-top:1.5rem; border-top:1px solid rgba(245,240,232,.18); color:rgba(245,240,232,.58); }
     .rental-note strong { display:block; margin-bottom:.45rem; color:rgba(245,240,232,.75); font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-weight:400; }
     .rental-note p { font-size:.78rem; font-weight:300; line-height:1.7; }
