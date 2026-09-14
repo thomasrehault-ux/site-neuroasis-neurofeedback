@@ -313,19 +313,6 @@ const faqJsonLd = JSON.stringify({
         particulière : la personne s'installe, écoute de la musique et le système fonctionne tout
         seul.
       </p>
-      <figure class="session-visual">
-        <img
-          src={`${basePath}/images/seance-neurofeedback.jpg`}
-          alt="Personne installée dans un fauteuil avec des capteurs NeurOptimal® sur le cuir chevelu et les oreilles"
-          width="1400"
-          height="933"
-          loading="lazy"
-        />
-        <figcaption>
-          Visuel d'illustration : les capteurs lisent l'activité électrique naturelle sans envoyer
-          de courant au cerveau.
-        </figcaption>
-      </figure>
       <div class="steps">
         <div class="step">
           <div class="step-num" aria-hidden="true">01</div>
@@ -734,7 +721,7 @@ const faqJsonLd = JSON.stringify({
     );
 
     document
-      .querySelectorAll(".what-card,.step,.condition-card,.principle-card,.practitioner-card,.session-visual")
+      .querySelectorAll(".what-card,.step,.condition-card,.principle-card,.practitioner-card")
       .forEach((entry) => {
         entry.style.opacity = "0";
         entry.style.transform = "translateY(16px)";
@@ -834,9 +821,6 @@ const faqJsonLd = JSON.stringify({
     #how .section-title { color:var(--cream); }
     #how .section-tag { color:var(--gold); }
     #how .section-lead { color:rgba(245,240,232,.7); }
-    .session-visual { margin:3rem 0 1rem; }
-    .session-visual img { display:block; width:100%; height:auto; max-height:560px; object-fit:cover; border-radius:6px; box-shadow:0 22px 60px rgba(0,0,0,.25); }
-    .session-visual figcaption { margin-top:.75rem; font-size:.72rem; font-weight:300; color:rgba(245,240,232,.5); text-align:right; }
     .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; margin-top:3rem; }
     .step { padding:2rem 1.5rem; border-top:1px solid rgba(201,169,110,.3); transition:border-color .3s; }
     .step:hover { border-color:var(--gold); }
@@ -926,7 +910,6 @@ const faqJsonLd = JSON.stringify({
       .practitioner-card { grid-template-columns:1fr; }
       .practitioner-card > img { height:230px; }
       .practitioner-content { min-height:220px; }
-      .session-visual figcaption { text-align:left; }
     }
   </style>
 </Layout>
