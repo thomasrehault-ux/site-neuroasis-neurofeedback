@@ -4,8 +4,10 @@ import Layout from "../layouts/Layout.astro";
 const title = "NeurOptimal® à Nantes et Clisson | NeurOasis";
 const description =
   "Séances NeurOptimal® à Nantes et Clisson : un entraînement cérébral non invasif au service du bien-être et de l'adaptation face au stress.";
-const pagesUrl = "https://thomasrehault-ux.github.io/site-neuroasis-neurofeedback";
-const basePath = import.meta.env.BASE_URL;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const siteUrl = new URL(import.meta.env.BASE_URL, Astro.site ?? "https://neuroasis.fr")
+  .toString()
+  .replace(/\/$/, "");
 const currentYear = new Date().getFullYear();
 
 const healthBusinessJsonLd = JSON.stringify({
@@ -14,8 +16,8 @@ const healthBusinessJsonLd = JSON.stringify({
   name: "NeurOasis",
   description:
     "Séances NeurOptimal® à Nantes et Clisson, proposées comme un entraînement cérébral non invasif et une démarche de bien-être.",
-  url: pagesUrl,
-  image: `${pagesUrl}/images/seance-neurofeedback.jpg`,
+  url: siteUrl,
+  image: `${siteUrl}/images/seance-neurofeedback.jpg`,
   location: [
     {
       "@type": "Place",
@@ -112,14 +114,14 @@ const faqJsonLd = JSON.stringify({
     />
     <meta name="author" content="NeurOasis" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={pagesUrl} />
+    <link rel="canonical" href={`${siteUrl}/`} />
     <meta name="theme-color" content="#1a2e1e" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={pagesUrl} />
+    <meta property="og:url" content={`${siteUrl}/`} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${pagesUrl}/images/seance-neurofeedback.jpg`} />
+    <meta property="og:image" content={`${siteUrl}/images/seance-neurofeedback.jpg`} />
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:site_name" content="NeurOasis" />
 
@@ -129,7 +131,7 @@ const faqJsonLd = JSON.stringify({
       name="twitter:description"
       content="Retrouvez sérénité, bien-être et performance naturellement avec NeurOptimal® à Nantes et Clisson."
     />
-    <meta name="twitter:image" content={`${pagesUrl}/images/seance-neurofeedback.jpg`} />
+    <meta name="twitter:image" content={`${siteUrl}/images/seance-neurofeedback.jpg`} />
 
     <script type="application/ld+json" set:html={healthBusinessJsonLd}></script>
     <script type="application/ld+json" set:html={faqJsonLd}></script>

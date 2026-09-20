@@ -2,7 +2,11 @@
 import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
+const isGitHubPages = process.env.DEPLOY_TARGET === 'github-pages';
+
 export default defineConfig({
-  site: 'https://thomasrehault-ux.github.io',
-  base: '/site-neuroasis-neurofeedback',
+  site: isGitHubPages ? 'https://thomasrehault-ux.github.io' : 'https://neuroasis.fr',
+  base: isGitHubPages ? '/site-neuroasis-neurofeedback' : undefined,
+  trailingSlash: 'always',
+  compressHTML: true,
 });

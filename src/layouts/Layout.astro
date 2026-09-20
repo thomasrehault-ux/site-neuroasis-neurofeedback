@@ -10,7 +10,7 @@ const {
   description = "NeurOasis",
   lang = "fr",
 } = Astro.props;
-const basePath = import.meta.env.BASE_URL;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <!doctype html>
